@@ -1,7 +1,3 @@
-Collecting workspace information
-
-Here is the `README.md` file for the `/users/register` endpoint:
-
 ````markdown
 ### Method: POST
 
