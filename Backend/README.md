@@ -1,5 +1,6 @@
-```markdown
 # User Register Endpoint
+
+## Endpoint: `/users/register`
 
 ### Method: POST
 
@@ -27,8 +28,6 @@ The request body should be a JSON object with the following fields:
   - `password` (string): User's password (minimum 6 characters).
   - `token` (String): JWT Token
 
-...existing documentation...
-
 # User Login Endpoint
 
 ## Endpoint: `/users/login`
@@ -55,4 +54,43 @@ The request body should be a JSON object with the following fields:
   - `email` (string): User's email address (must be a valid email).
   - `password` (string): User's password (minimum 6 characters).
   - `token` (String): JWT Token
-```
+
+# User Profile Endpoint
+
+## Endpoint: `/users/profile`
+
+### Method: GET
+
+### Description:
+
+This endpoint retrieves the profile of the authenticated user.
+
+### Headers:
+
+- `Authorization`: Bearer token
+
+### Example Response:
+
+- `user` (object):
+  - `fullname` (object).
+    - `firstname` (string): User's first name.
+    - `lastname` (string): User's last name.
+  - `email` (string): User's email address.
+
+# User Logout Endpoint
+
+## Endpoint: `/users/logout`
+
+### Method: GET
+
+### Description:
+
+This endpoint logs out the authenticated user by clearing the authentication token.
+
+### Headers:
+
+- `Authorization`: Bearer token
+
+### Example Response:
+
+- `message` (string): "Logged out successfully!"
