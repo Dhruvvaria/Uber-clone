@@ -107,30 +107,104 @@ This endpoint is used to register a new captain. It validates the input data, ha
 
 ### Request Body:
 
-The request body should be a JSON object with the following fields:
+"fullname": {
+"firstname": "John", // string, minimum length 3 characters
+"lastname": "Doe" // string, minimum length 3 characters
+},
+"email": "john.doe@example.com", // valid email address
+"password": "password123", // string, minimum length 5 characters
+"vehicle": {
+"color": "Red", // string, minimum length 3 characters
+"plate": "XYZ123", // string, minimum length 3 characters
+"capacity": 4, // number, minimum value 1
+"vehicleType": "car" // string, must be one of ["car", "motorcycle", "auto"]
+}
 
-- `fullname`: An object containing:
-  - `firstname`: A string with a minimum length of 3 characters.
-  - `lastname`: A string with a minimum length of 3 characters.
-- `email`: A valid email address.
-- `password`: A string with a minimum length of 5 characters.
-- `vehicle`: An object containing:
-  - `color`: A string with a minimum length of 3 characters.
-  - `plate`: A string with a minimum length of 3 characters.
-  - `capacity`: A number with a minimum value of 1.
-  - `vehicleType`: A string that must be one of ["car", "motorcycle", "auto"].
-
-### Example Request:
+### Example Response:
 
 - `captain` (object):
-  - `fullname` (object).
-    - `firstname` (string): User's first name.
-    - `lastname` (string): User's last name.
-  - `email` (string): User's email address.
-  - `password` (string): User's password.
+  - `fullname` (object):
+    - `firstname` (string): Captain's first name (minimum 3 characters).
+    - `lastname` (string): Captain's last name (minimum 3 characters).
+  - `email` (string): Captain's email address (must be a valid email).
   - `vehicle` (object):
-    - `color` (string): vehicle color.
-    - `capacity` (string): vehicle capacity.
-    - `vehicleType` (string): vehicle type.
-    - `plate` (string): vehicle number plate.
-  - `token` (String): JWT Token
+    - `color` (string): Vehicle color (minimum 3 characters).
+    - `plate` (string): Vehicle plate (minimum 3 characters).
+    - `capacity` (number): Vehicle capacity (minimum 1).
+    - `vehicleType` (string): Vehicle type (must be one of ["car", "motorcycle", "auto"]).
+  - `token` (string): JWT Token
+
+# Captain Login Endpoint
+
+## Endpoint: `/captains/login`
+
+### Method: POST
+
+### Description:
+
+This endpoint authenticates an existing captain. It validates the credentials and returns an authentication token along with the captain details.
+
+### Request Body:
+
+- `email`: A valid email address
+- `password`: A string with a minimum length of 6 characters
+
+### Example Response:
+
+- `captain` (object):
+  - `fullname` (object):
+    - `firstname` (string): Captain's first name (minimum 3 characters).
+    - `lastname` (string): Captain's last name (minimum 3 characters).
+  - `email` (string): Captain's email address (must be a valid email).
+  - `vehicle` (object):
+    - `color` (string): Vehicle color (minimum 3 characters).
+    - `plate` (string): Vehicle plate (minimum 3 characters).
+    - `capacity` (number): Vehicle capacity (minimum 1).
+    - `vehicleType` (string): Vehicle type (must be one of ["car", "motorcycle", "auto"]).
+  - `token` (string): JWT Token
+
+# Captain Profile Endpoint
+
+## Endpoint: `/captains/profile`
+
+### Method: GET
+
+### Description:
+
+This endpoint retrieves the profile of the authenticated captain.
+
+### Headers:
+
+- `Authorization`: Bearer token
+
+### Example Response:
+
+- `captain` (object):
+  - `fullname` (object):
+    - `firstname` (string): Captain's first name (minimum 3 characters).
+    - `lastname` (string): Captain's last name (minimum 3 characters).
+  - `email` (string): Captain's email address (must be a valid email).
+  - `vehicle` (object):
+    - `color` (string): Vehicle color (minimum 3 characters).
+    - `plate` (string): Vehicle plate (minimum 3 characters).
+    - `capacity` (number): Vehicle capacity (minimum 1).
+    - `vehicleType` (string): Vehicle type (must be one of ["car", "motorcycle", "auto"]).
+  - `token` (string): JWT Token
+
+# Captain Logout Endpoint
+
+## Endpoint: `/captains/logout`
+
+### Method: GET
+
+### Description:
+
+This endpoint logs out the authenticated captain by clearing the authentication token.
+
+### Headers:
+
+- `Authorization`: Bearer token
+
+### Example Response:
+
+- `message` (string): "Logged out successfully!"
