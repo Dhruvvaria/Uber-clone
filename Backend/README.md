@@ -107,18 +107,17 @@ This endpoint is used to register a new captain. It validates the input data, ha
 
 ### Request Body:
 
-"fullname": {
-"firstname": "John", // string, minimum length 3 characters
-"lastname": "Doe" // string, minimum length 3 characters
-},
-"email": "john.doe@example.com", // valid email address
-"password": "password123", // string, minimum length 5 characters
-"vehicle": {
-"color": "Red", // string, minimum length 3 characters
-"plate": "XYZ123", // string, minimum length 3 characters
-"capacity": 4, // number, minimum value 1
-"vehicleType": "car" // string, must be one of ["car", "motorcycle", "auto"]
-}
+- `captain` (object):
+  - `fullname` (object):
+    - `firstname` (string): Captain's first name (minimum 3 characters).
+    - `lastname` (string): Captain's last name (minimum 3 characters).
+  - `email` (string): Captain's email address (must be a valid email).
+  - `password` (string): A string with a minimum length of 6 characters.
+  - `vehicle` (object):
+    - `color` (string): Vehicle color (minimum 3 characters).
+    - `plate` (string): Vehicle plate (minimum 3 characters).
+    - `capacity` (number): Vehicle capacity (minimum 1).
+    - `vehicleType` (string): Vehicle type (must be one of ["car", "motorcycle", "auto"]).
 
 ### Example Response:
 
