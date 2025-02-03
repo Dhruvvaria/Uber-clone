@@ -263,7 +263,7 @@ This endpoint retrieves the distance and time between an origin and a destinatio
 
 # Get Suggestions Endpoint
 
-## Endpoint: `/maps/get-suggetions`
+## Endpoint: `/maps/get-suggestions`
 
 ### Method: GET
 
@@ -340,3 +340,91 @@ This endpoint retrieves the fare for a ride between a pickup and destination loc
   - `auto` (number): Fare for auto.
   - `car` (number): Fare for car.
   - `motorcycle` (number): Fare for motorcycle.
+
+# Confirm Ride Endpoint
+
+## Endpoint: `/rides/confirm`
+
+### Method: POST
+
+### Description:
+
+This endpoint confirms a ride by a captain.
+
+### Request Body:
+
+- `rideId`: A string representing the ride ID.
+
+### Headers:
+
+- `Authorization`: Bearer token
+
+### Example Response:
+
+- `ride` (object):
+  - `user` (string): User ID.
+  - `pickup` (string): Pickup location.
+  - `destination` (string): Destination location.
+  - `fare` (number): Fare for the ride.
+  - `status` (string): Status of the ride.
+  - `otp` (string): OTP for the ride.
+  - `captain` (string): Captain ID.
+
+# Start Ride Endpoint
+
+## Endpoint: `/rides/start-ride`
+
+### Method: GET
+
+### Description:
+
+This endpoint starts a ride by a captain.
+
+### Query Parameters:
+
+- `rideId`: A string representing the ride ID.
+- `otp`: A string representing the OTP for the ride.
+
+### Headers:
+
+- `Authorization`: Bearer token
+
+### Example Response:
+
+- `ride` (object):
+  - `user` (string): User ID.
+  - `pickup` (string): Pickup location.
+  - `destination` (string): Destination location.
+  - `fare` (number): Fare for the ride.
+  - `status` (string): Status of the ride.
+  - `otp` (string): OTP for the ride.
+  - `captain` (string): Captain ID.
+
+# End Ride Endpoint
+
+## Endpoint: `/rides/end-ride`
+
+### Method: POST
+
+### Description:
+
+This endpoint ends a ride by a captain.
+
+### Request Body:
+
+- `rideId`: A string representing the ride ID.
+
+### Headers:
+
+- `Authorization`: Bearer token
+
+### Example Response:
+
+- `ride` (object):
+  - `user` (string): User ID.
+  - `pickup` (string): Pickup location.
+  - `destination` (string): Destination location.
+  - `fare` (number): Fare for the ride.
+  - `status` (string): Status of the ride.
+  - `otp` (string): OTP for the ride.
+  - `captain` (string): Captain ID.
