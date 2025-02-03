@@ -6,7 +6,7 @@ This project is a clone of the Uber application, focusing on the user side funct
 
 ### Start
 
-![Start Page](./posters/Start.png)
+![Start Page](../posters/Start.png)
 
 ### User Login
 
