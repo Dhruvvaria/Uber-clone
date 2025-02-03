@@ -10,55 +10,55 @@ This project is a clone of the Uber application, focusing on the user side funct
 
 ### User Login
 
-![User Login Page](./posters/User-Signin.png)
+![User Login Page](../posters/User-Signin.png)
 
 ### User Signup
 
-![User Signup Page](./posters/User-register.png)
+![User Signup Page](../posters/User-register.png)
 
 ### Home
 
-![Home Page](./posters/User-home.png)
+![Home Page](../posters/User-home.png)
 
 ### Location Panel
 
-![Location Panel](./posters/LocationPanel.png)
+![Location Panel](../posters/LocationPanel.png)
 
 ### Choose Ride
 
-![Riding Page](./posters/chhoseRide.png)
+![Riding Page](../posters/chhoseRide.png)
 
 ### ConfirmRide
 
-![Confirm Page](./posters/ConfirmRide.png)
+![Confirm Page](../posters/ConfirmRide.png)
 
 ### Waiting For Captain
 
-![Waiting for Captain](./posters/WaitingForCaptain.png)
+![Waiting for Captain](../posters/WaitingForCaptain.png)
 
 ### Captain Login
 
-![Captain Login Page](./posters/Captain-Signin.png)
+![Captain Login Page](../posters/Captain-Signin.png)
 
 ### Captain Signup
 
-![Captain Signup Page](./posters/Captain-register.png)
+![Captain Signup Page](../posters/Captain-register.png)
 
 ### Captain Home
 
-![Captain Home Page](./posters/Captain-home.png)
+![Captain Home Page](../posters/Captain-home.png)
 
 ### Captain Riding
 
-![Captain Riding Page](./posters/Captain-ConfirmRide.png)
+![Captain Riding Page](../posters/Captain-ConfirmRide.png)
 
 ### Captain Confirm Ride Panel
 
-![Captain Confirm Ride Pannel](./posters/Captain-ConfirmRidePanel.png)
+![Captain Confirm Ride Pannel](../posters/Captain-ConfirmRidePanel.png)
 
 ### End Ride
 
-![End Ride](./posters/FinishRide.png)
+![End Ride](../posters/FinishRide.png)
 
 ## Setup
 
