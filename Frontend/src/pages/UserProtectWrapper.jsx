@@ -22,7 +22,7 @@ export default function UserProtectWrapper({ children }) {
       })
       .then((response) => {
         if (response.status === 200) {
-          setUser(response.data.user);
+          setUser(response.data);
           setIsLoading(false);
         }
       })

@@ -14,6 +14,8 @@ export default function VehiclePanel(props) {
       <div
         onClick={() => {
           props.setConfirmedRidePanel(true);
+          props.selectVehicle("car");
+          console.log("Vehicle selected: car"); // Debugging
         }}
         className="flex items-center border-2 active:border-black rounded-xl justify-between w-full p-3 mb-3 gap-2">
         <img
@@ -33,11 +35,14 @@ export default function VehiclePanel(props) {
             Affordable, compacts rides
           </p>
         </div>
-        <h2 className="text-lg font-semibold">&#8377;192.20</h2>
+        <h2 className="text-lg font-semibold">
+          &#8377;{props.fare?.car || "Calculating..."}
+        </h2>
       </div>
       <div
         onClick={() => {
           props.setConfirmedRidePanel(true);
+          props.selectVehicle("motorcycle");
         }}
         className="flex items-center border-2 active:border-black rounded-xl justify-between w-full p-3 mb-3 gap-2">
         <img
@@ -57,11 +62,14 @@ export default function VehiclePanel(props) {
             Affordable Motorcycle Ride
           </p>
         </div>
-        <h2 className="text-lg font-semibold">&#8377;65.17</h2>
+        <h2 className="text-lg font-semibold">
+          &#8377;{props.fare.motorcycle || "Calculating..."}
+        </h2>
       </div>
       <div
         onClick={() => {
           props.setConfirmedRidePanel(true);
+          props.selectVehicle("auto");
         }}
         className="flex items-center border-2 active:border-black rounded-xl justify-between w-full p-3 mb-3 gap-2">
         <img
@@ -79,7 +87,9 @@ export default function VehiclePanel(props) {
           <h5 className="text-sm">2 mins away</h5>
           <p className="text-xs font-grey-400 font-normal"></p>
         </div>
-        <h2 className="text-lg font-semibold">&#8377;118.43</h2>
+        <h2 className="text-lg font-semibold">
+          &#8377;{props.fare.auto || "Calculating..."}
+        </h2>
       </div>
     </div>
   );

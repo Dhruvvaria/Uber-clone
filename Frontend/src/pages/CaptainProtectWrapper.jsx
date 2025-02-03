@@ -22,7 +22,7 @@ export default function CaptainProtectWrapper({ children }) {
       })
       .then((response) => {
         if (response.status === 200) {
-          setCaptain(response.data.user);
+          setCaptain(response.data.captain);
           setIsLoading(false);
         }
       })

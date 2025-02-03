@@ -207,3 +207,136 @@ This endpoint logs out the authenticated captain by clearing the authentication 
 ### Example Response:
 
 - `message` (string): "Logged out successfully!"
+
+# Get Coordinate Endpoint
+
+## Endpoint: `/maps/get-coordinate`
+
+### Method: GET
+
+### Description:
+
+This endpoint retrieves the coordinates (latitude and longitude) for a given address.
+
+### Query Parameters:
+
+- `address`: A string representing the address to get coordinates for.
+
+### Headers:
+
+- `Authorization`: Bearer token
+
+### Example Response:
+
+- `coordinates` (object):
+  - `lat` (number): Latitude of the address.
+  - `lng` (number): Longitude of the address.
+
+# Get Distance and Time Endpoint
+
+## Endpoint: `/maps/get-distance-time`
+
+### Method: GET
+
+### Description:
+
+This endpoint retrieves the distance and time between an origin and a destination.
+
+### Query Parameters:
+
+- `origin`: A string representing the starting point.
+- `destination`: A string representing the ending point.
+
+### Headers:
+
+- `Authorization`: Bearer token
+
+### Example Response:
+
+- `distanceTime` (object):
+  - `distance` (object):
+    - `text` (string): Distance in human-readable format.
+    - `value` (number): Distance in meters.
+  - `duration` (object):
+    - `text` (string): Duration in human-readable format.
+    - `value` (number): Duration in seconds.
+
+# Get Suggestions Endpoint
+
+## Endpoint: `/maps/get-suggetions`
+
+### Method: GET
+
+### Description:
+
+This endpoint retrieves autocomplete suggestions for a given input.
+
+### Query Parameters:
+
+- `input`: A string representing the input to get suggestions for.
+
+### Headers:
+
+- `Authorization`: Bearer token
+
+### Example Response:
+
+- `suggestions` (array):
+  - Each element is an object containing:
+    - `description` (string): Description of the suggestion.
+
+# Create Ride Endpoint
+
+## Endpoint: `/rides/create`
+
+### Method: POST
+
+### Description:
+
+This endpoint creates a new ride.
+
+### Request Body:
+
+- `pickup`: A string representing the pickup location.
+- `destination`: A string representing the destination location.
+- `vehicleType`: A string representing the type of vehicle (must be one of ["auto", "car", "motorcycle"]).
+
+### Headers:
+
+- `Authorization`: Bearer token
+
+### Example Response:
+
+- `ride` (object):
+  - `user` (string): User ID.
+  - `pickup` (string): Pickup location.
+  - `destination` (string): Destination location.
+  - `fare` (number): Fare for the ride.
+  - `status` (string): Status of the ride.
+  - `otp` (string): OTP for the ride.
+
+# Get Fare Endpoint
+
+## Endpoint: `/rides/get-fare`
+
+### Method: GET
+
+### Description:
+
+This endpoint retrieves the fare for a ride between a pickup and destination location.
+
+### Query Parameters:
+
+- `pickup`: A string representing the pickup location.
+- `destination`: A string representing the destination location.
+
+### Headers:
+
+- `Authorization`: Bearer token
+
+### Example Response:
+
+- `fare` (object):
+  - `auto` (number): Fare for auto.
+  - `car` (number): Fare for car.
+  - `motorcycle` (number): Fare for motorcycle.
